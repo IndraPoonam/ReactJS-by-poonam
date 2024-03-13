@@ -41,4 +41,4 @@ function IDcard() {
     </>
   );
 }
-export default IDcard;
+export default IDcard; 
