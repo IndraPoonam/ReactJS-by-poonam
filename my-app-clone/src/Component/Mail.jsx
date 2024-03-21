@@ -6,30 +6,53 @@ import newer from '../icons/chevron_left_black_24dp.svg'
 import older from '../icons/chevron_right_black_24dp.svg'
 import tool from '../icons/keyboard_black_24dp.svg'
 import inputtool from '../icons/arrow_drop_down_black_24dp.svg'
-import select2 from '../icons/check_box_outline_blank_black_24dp.svg'
-import drag from '../icons/drag_indicator_black_24dp.svg'
-import starred from '../icons/star_border_black_24dp.svg'
-import archive from '../icons/archive_black_24dp.svg'
-import delete2 from '../icons/delete_black_24dp.svg'
-import unread from '../icons/mark_as_unread_black_24dp.svg'
-import snooze from '../icons/access_time_filled_black_24dp.svg'
-import select3 from '../icons/check_box_outline_blank_black_24dp.svg'
-import drag2 from '../icons/drag_indicator_black_24dp.svg'
-import notstart from '../icons/star_border_black_24dp.svg'
-import archivepoo from '../icons/archive_black_24dp.svg'
-import deletepoo from '../icons/delete_black_24dp.svg'
-import unread222 from '../icons/mark_as_unread_black_24dp.svg'
-import snoozepoo from '../icons/access_time_filled_black_24dp.svg'
-import selectpoon from '../icons/check_box_outline_blank_black_24dp.svg'
-import dragpoonam from '../icons/drag_indicator_black_24dp.svg'
-import notstartpoonam from '../icons/star_border_black_24dp.svg'
-import archivepoonam from '../icons/archive_black_24dp.svg'
-import deletepoonam2 from '../icons/delete_black_24dp.svg'
-import unreadpoonam from '../icons/mark_as_unread_black_24dp.svg'
-import snoozepoonam from '../icons/access_time_filled_black_24dp.svg'
-import Storage2 from '../icons/open_in_new_black_24dp.svg'
 
-function Mail(){
+
+// import select2 from '../icons/check_box_outline_blank_black_24dp.svg'
+//  import drag from '../icons/drag_indicator_black_24dp.svg'
+// import starred from '../icons/star_border_black_24dp.svg'
+// import archive from '../icons/archive_black_24dp.svg'
+// import delete2 from '../icons/delete_black_24dp.svg'
+// import unread from '../icons/mark_as_unread_black_24dp.svg'
+// import snooze from '../icons/access_time_filled_black_24dp.svg'
+// import select3 from '../icons/check_box_outline_blank_black_24dp.svg'
+// import drag2 from '../icons/drag_indicator_black_24dp.svg'
+// import notstart from '../icons/star_border_black_24dp.svg'
+// import archivepoo from '../icons/archive_black_24dp.svg'
+// import deletepoo from '../icons/delete_black_24dp.svg'
+// import unread222 from '../icons/mark_as_unread_black_24dp.svg'
+// import snoozepoo from '../icons/access_time_filled_black_24dp.svg'
+// import selectpoon from '../icons/check_box_outline_blank_black_24dp.svg'
+// import dragpoonam from '../icons/drag_indicator_black_24dp.svg'
+// import notstartpoonam from '../icons/star_border_black_24dp.svg'
+// import archivepoonam from '../icons/archive_black_24dp.svg'
+// import deletepoonam2 from '../icons/delete_black_24dp.svg'
+// import unreadpoonam from '../icons/mark_as_unread_black_24dp.svg'
+// import snoozepoonam from '../icons/access_time_filled_black_24dp.svg'
+
+import InboxMsg from './InboxMsg'
+import SentMsg from './SentMsg'
+import Login from './Login'
+// import Storage2 from '../icons/open_in_new_black_24dp.svg'
+
+function Mail({params}){
+  const renderComponent = (component) => {
+    let data;
+    switch (component) {
+      case 'InboxMsg':
+        data = <InboxMsg />
+        break;
+      case 'SentMsg':
+        data = <SentMsg />
+        break;
+      default:
+        data = <Login />
+        break;
+    }
+return data;
+  }
+
+
   return(
 <section class="inbox">
 
@@ -110,10 +133,10 @@ function Mail(){
     </div>
 
   </div>
-
-
-  
-  <div class="content">
+{/* ======================render==================== */}
+{renderComponent(params)}
+  {/* <div class="content">                       
+  <div class="content">                                  
     <div class="mail">
         
         <div class="inbox-message-item">
@@ -313,8 +336,11 @@ function Mail(){
 
     </div>
 
+  </div>
+
+</div> */}
   {/* =============================footer part======================================== */}
-    <footer class="activity">
+    {/* <footer class="activity">
       <div class="footer-container">
 
         <div class="footer-item">
@@ -349,12 +375,10 @@ function Mail(){
         </div>
 
       </div>
-    </footer>
+    </footer> */}
 
-  </div>
 
 </div>
-
 </section>
   )
 };
