@@ -33,6 +33,7 @@ import inputtool from '../icons/arrow_drop_down_black_24dp.svg'
 import InboxMsg from './InboxMsg'
 import SentMsg from './SentMsg'
 import Login from './Login'
+import Starred from './Starred'
 // import Storage2 from '../icons/open_in_new_black_24dp.svg'
 
 function Mail({params}){
@@ -42,11 +43,21 @@ function Mail({params}){
       case 'InboxMsg':
         data = <InboxMsg />
         break;
+
       case 'SentMsg':
         data = <SentMsg />
         break;
-      default:
+
+        case 'Starred':
+          data = <Starred />
+          break;
+
+        case 'Login':
         data = <Login />
+        break;
+
+      default:
+        data = ''
         break;
     }
 return data;
@@ -135,6 +146,7 @@ return data;
   </div>
 {/* ======================render==================== */}
 {renderComponent(params)}
+
   {/* <div class="content">                       
   <div class="content">                                  
     <div class="mail">
@@ -339,6 +351,9 @@ return data;
   </div>
 
 </div> */}
+
+
+
   {/* =============================footer part======================================== */}
     {/* <footer class="activity">
       <div class="footer-container">

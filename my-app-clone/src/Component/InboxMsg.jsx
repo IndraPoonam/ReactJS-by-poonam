@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import select2 from '../icons/check_box_outline_blank_black_24dp.svg'
  import drag from '../icons/drag_indicator_black_24dp.svg'
 import starred from '../icons/star_border_black_24dp.svg'
@@ -22,6 +22,7 @@ import unreadpoonam from '../icons/mark_as_unread_black_24dp.svg'
 import snoozepoonam from '../icons/access_time_filled_black_24dp.svg'
 
 function InboxMsg() {
+
     useEffect(() => {
         const url = window.location.href;
         const token = url.match(/access_token=([^&]+)/);
@@ -57,22 +58,23 @@ function InboxMsg() {
             'Content-Type': `application/json`
           }
         };
+
         for (let message_id of id.slice(0, 10)) {
           console.log("message is==", message_id.id)
           let url = `https://gmail.googleapis.com/gmail/v1/users/me/messages/${message_id.id}`;
              fetch(url, options)
             .then(response => response.json())
-            .then(json => console.log("mais data",json))
+            .then(json => console.log("main data",json))
             .catch(error => console.log('error in fetching mails', error));
         }
     
       };
 
-
-
+  
 
   return (
     <> 
+
    <div class="content">                       
   <div class="content">                                  
     <div class="mail">
@@ -279,9 +281,7 @@ function InboxMsg() {
     </div> 
     
     
-    
-    
-    
+
     </>
   )
 }

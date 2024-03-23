@@ -95,12 +95,12 @@ function Main (){
  <div class="body-wrapper">
 <Leftside/>
 <Header/>
-
 <Mail/>
 <Routes>
-         <Route path='/' element={<Mail params=""/>}/> 
+         <Route path='/' element={<Mail params="Login"/>}/> 
          <Route path='/inboxmsg' element={<Mail params="InboxMsg"/>}/> 
          <Route path='/sentmsg' element={<Mail params="SentMsg"/>}/> 
+         <Route path='/starred' element={<Mail params="Starred"/>}/> 
           </Routes>
 
 <FooterBody/>
